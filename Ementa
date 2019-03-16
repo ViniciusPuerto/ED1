@@ -7,4 +7,4 @@ Testes, Listas e Trabalho
 
 Mt = 0.5Mp + 0.15MTe + 0.15Ml + 0.2Mt
 
-gcc -o prog -Wall -Wextra -02 SOURCE.c
+gcc -o prog -Wall -Wextra  SOURCE.c
