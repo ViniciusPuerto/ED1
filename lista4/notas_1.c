@@ -19,21 +19,21 @@ int maxRepeating(int* arr, int n, int k)
         } 
     } 
   
-    /* Uncomment this code to get the original array back 
+    /*Uncomment this code to get the original array back 
        for (int i = 0; i< n; i++) 
-          arr[i] = arr[i]%k; */
+          arr[i] = arr[i]%k;*/
   
     // Return index of the maximum element 
-    return result; 
+    return arr[]; 
 } 
   
 // Driver program to test above function 
 int main() 
 {   
     int cout;
-    int arr[] = {2, 2, 2, 3, 3, 5, 3, 4, 1, 7}; 
+    int arr[] = {20, 25, 85, 40, 25, 90, 25, 40, 55, 40}; 
     int n = sizeof(arr)/sizeof(arr[0]); 
-    int k = 8; 
+    int k = 9; 
   
     cout = maxRepeating(arr, n, k) ; 
     printf("%d \n", cout);
