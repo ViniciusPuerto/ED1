@@ -1,40 +1,53 @@
 #include <stdio.h>
+// #include <stdlib.h>
+// #include <math.h>
 
-int mostFrequent(int arr[], int n) 
-{ 
-   
-  
-    // find the max frequency using linear traversal 
-    int max_count = 1, res = arr[0], curr_count = 1; 
-    for (int i = 1; i < n; i++) { 
-        if (arr[i] == arr[i - 1]) 
-            curr_count++; 
-        else { 
-            if (curr_count > max_count) { 
-                max_count = curr_count; 
-                res = arr[i - 1]; 
-            } 
-            curr_count = 1; 
-        } 
-    } 
-  
-    //If last element is most frequent 
-    if (curr_count > max_count) 
-    { 
-        max_count = curr_count; 
-        res = arr[n - 1]; 
-    } 
-  
-    return res; 
-} 
-  
-// driver program 
-int main() 
-{ 
-    int cout, tam, a ;
-    tam = 10;
-    int arr[] = {20, 25, 85, 40, 25, 90, 25, 40, 55, 40};
+void moda(float v[], int tam)
+{
 
+    int cont[tam];
+    float conta, moda;
+
+    for (int i = 0; i < tam; i++)
+    {
+        for (int j = i + 1; j < tam; j++)
+        {
+
+            if (v[i] == v[j])
+            {
+                cont[i]++;
+                if (cont[i] > conta)
+                {
+                    conta = cont[i];
+                    moda = v[i];
+                }
+            }
+        }
+        cont[i] = 0;
+    }
+    if (conta == 0)
+    {
+        //printf("Nao existe moda\n");
+    }
+    else
+    {
+        printf("%.0f\n", moda);
+    }
+}
+
+int main()
+{
+
+    int a;
+    float arr[200];
+    int tam = 0;
+    scanf("%d", &tam);
+
+    for (int i = 0; i < tam; ++i)
+    {
+        scanf("%f", &arr[i]);
+    }
+    
     for (int i = 0; i < tam; ++i)
     {
         for (int j = i + 1; j < tam; ++j)
@@ -47,13 +60,8 @@ int main()
             }
         }
     }
-    for (int i = 0; i < tam; ++i)
-    {
-        printf("%d\n", arr[i]);
-    }
-
-    int n = sizeof(arr) / sizeof(arr[0]); 
-    cout = mostFrequent(arr, 2); 
-    printf("%d \n", cout);
-    return 0; 
-} 
+    
+    moda(arr, tam);
+    
+    return 0;
+}
