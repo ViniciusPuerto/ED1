@@ -2,7 +2,7 @@
 // #include <stdlib.h>
 // #include <math.h>
 
-void moda(float v[], int tam)
+float moda(float v[], int tam)
 {
 
     int cont[tam];
@@ -25,14 +25,9 @@ void moda(float v[], int tam)
         }
         cont[i] = 0;
     }
-    if (conta == 0)
-    {
-        //printf("Nao existe moda\n");
-    }
-    else
-    {
-        printf("%.0f\n", moda);
-    }
+    
+       return moda;
+    
 }
 
 int main()
@@ -41,6 +36,7 @@ int main()
     int a;
     float arr[200];
     int tam = 0;
+    float cout;
     scanf("%d", &tam);
 
     for (int i = 0; i < tam; ++i)
@@ -61,7 +57,7 @@ int main()
         }
     }
     
-    moda(arr, tam);
-    
+    cout = moda(arr, tam);
+    printf("%.0f", cout);
     return 0;
 }
