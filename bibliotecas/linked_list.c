@@ -102,7 +102,7 @@ void imprime(celula *le){
         }
     }
 
-    int busca_e_insere(celula *le , int x, int y) {
+        int busca_e_insere(celula *le , int x, int y) {
         celula *p = busca(y, le);
         if (p != NULL){
             return insere(x, p);
